@@ -1,5 +1,9 @@
 # Home Assistant 自定义集成下载脚本
 
+> 因为群晖的终端环境默认没有安装 `unzip`，所以把解压缩命令换成了 `7z`。
+> 以下脚本中的 `https://cdn.jsdelivr.net/gh/hasscc/get/get` 
+> 都换成 `https://cdn.jsdelivr.net/gh/dofine/get/get` 
+
 ## 指定集成
 
 ```bash
