@@ -44,7 +44,7 @@ function checkRequirement () {
 }
 
 checkRequirement "wget"
-checkRequirement "unzip"
+checkRequirement "7z"
 
 info "Archive URL: $ARCHIVE_URL"
 info "Trying to find the correct directory..."
@@ -90,11 +90,11 @@ if [ -n "$haPath" ]; then
     info "Unpacking..."
     str="/releases/"
     if [ ${ARCHIVE_URL/${str}/} = $ARCHIVE_URL ]; then
-        unzip -o "$ccPath/$ARCHIVE_TAG.zip" -d "$ccPath" >/dev/null 2>&1
+        7z x "$ccPath/$ARCHIVE_TAG.zip" -o"$ccPath" >/dev/null 2>&1
     else
         dir="$ccPath/$REPO_NAME-$ver/custom_components/$DOMAIN"
         mkdir -p $dir
-        unzip -o "$ccPath/$ARCHIVE_TAG.zip" -d $dir >/dev/null 2>&1
+        7z x "$ccPath/$ARCHIVE_TAG.zip" -o$dir >/dev/null 2>&1
     fi
 
     if [ ! -d "$ccPath/$REPO_NAME-$ver" ]; then
